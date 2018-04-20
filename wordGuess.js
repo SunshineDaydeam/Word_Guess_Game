@@ -5,25 +5,32 @@
 
     //possible categories and words  
     carBrands = ["acura", "aston martin", "audi", "bentley", "bmw", "bugatti", "buick", "cadillac", "chevrolet", "chevy", 
-    "chrysler", "citroen", "dodge", "ferrari", "fiat", "ford", "geely", "honda", "hyundai", "infiniti", "jaguar", 
-    "jeep", "koenigsegg", "lamborghini", "land rover", "lexus", "maserati", "mazda", "mclaren", "mercedes benz", "mitsubishi", "pagani", 
+    "chrysler", "citroen", "dodge", "ferrari", "fiat", "ford", "geely", "honda", "hyundai", "infiniti", "jaguar", "jeep", 
+    "koenigsegg", "lamborghini", "land rover", "lexus", "maserati", "mazda", "mclaren", "mercedes benz", "mitsubishi", "pagani", 
     "peugot", "porsche", "renault", "rolls royce", "subaru", "suzuki", "tesla", "toyota", "volkswagen", "volvo"]
     guitarBrands = ["alembic", "alvarez", "aria", "breedlove", "collings", "cort", "danelectro", "dean", "dobro", 
     "duesenberg", "epiphone", "ernie ball", "fender", "garrison", "gibson", "godin", "gretsch", "guild", "harmony", "heritage", 
-    "hofner", "hohner", "ibanez", "jackson", "kramer", "larivee", "lowden", "luna", "martin","oscar schmidt", "ovation", "parker", "paul reed smith", 
-    "peavey", "rainsong", "ramirez", "rickenbacker", "samick", "santa cruz", "seagull", "sigma", "squier", "takamine", "taylor", 
-    "teisco", "tacoma", "vox", "walden", "warwick", "yamaha", "yairi"]
-    vegasStripCasinos = ["aria", "ballys", "bellagio", "casino royale", "caesars palace", "circus circus", "cosmopolitan", "encore", "excalibur", "flamingos", 
-    "harras", "linq", "luxor", "mandalay bay", "mgm grand", "monte carlo", "mirage", "new york new york", "palazzo", "paris", "planet hollywood", "slots a fun", "stratosphere", "the cromwell", "treasure island", "tropicana", "venetian", "winn"],
-    austinBbq = ["franklins", "rudys", "valentinas", "kerlin", "browns", "freedmans", "terry blacks", "coopers old time pit", "micklewaith craft meats", "leonardis", "salt lick"]
+    "hofner", "hohner", "ibanez", "jackson", "kramer", "larivee", "lowden", "luna", "martin","oscar schmidt", "ovation", 
+    "parker", "paul reed smith", "peavey", "rainsong", "ramirez", "rickenbacker", "samick", "santa cruz", "seagull", "sigma", 
+    "squier", "takamine", "taylor", "teisco", "tacoma", "vox", "walden", "warwick", "yamaha", "yairi"]
+    vegasStripCasinos = ["aria", "ballys", "bellagio", "casino royale", "caesars palace", "circus circus", "cosmopolitan", 
+    "encore", "excalibur", "flamingos", "harras", "linq", "luxor", "mandalay bay", "mgm grand", "monte carlo", "mirage", 
+    "new york new york", "palazzo", "paris", "planet hollywood", "slots a fun", "stratosphere", "the cromwell", "treasure island", 
+    "tropicana", "venetian", "winn"],
+    austinBbq = ["franklins", "rudys", "valentinas", "kerlin", "browns", "freedmans", "terry blacks", "coopers old time pit", 
+    "micklewaith craft meats", "leonardis", "salt lick"]
     chordTypes = ["augmented", "diminished", "suspended", "seventh", "major", "minor", "power", "ninth", "eleventh"]
-    musicGenres = ["alternative", "americana", "blues", "bluegrass", "rock", "rockabilly", "punk", "grunge", 
-    "contemporary", "classical", "country", "baroque", "choral", "opera", "orchestral", "rennaissance", "gospel", 
-    "dance", "dubstep", "hardcore", "techno", "trance", "reggae", "swing", "rap", "christmas", "metal", "jazz", 
-    "ragtime", "karaoke", "mariachi", "latin", "salsa", "britpop", "funk", "motown", "psychedelic", "soul", "ska", 
-    "surf", "indie", "chicano", "acapella", "calypso"]
-    presidentsUs = ["taft", "obama", "hoover", "washington", "roosevelt", "clinton", "bush", "nixon", "eisenhower", 
-    "truman", "coolidge", "harding", "wilson", "mckinley"]
+    musicGenres = ["alternative", "americana", "blues", "bluegrass", "rock", "rockabilly", "punk", "grunge", "contemporary", 
+    "classical", "country", "baroque", "choral", "opera", "orchestral", "rennaissance", "gospel", "dance", "dubstep", "hardcore", 
+    "techno", "trance", "reggae", "swing", "rap", "christmas", "metal", "jazz", "ragtime", "karaoke", "mariachi", "latin", "salsa", 
+    "britpop", "funk", "motown", "psychedelic", "soul", "ska", "surf", "indie", "chicano", "acapella", "calypso"]
+    presidentsUs = ["george washington","john adams","thomas jefferson","james madison","james monroe","john quincy adams",
+    "andrew jackson","martin van buren","william h harrison","john tyler","james k polk","zachary taylor","millard fillmore",
+    "franklin pierce","james buchanan","abraham lincoln","andrew johnson","ulysses s grant","rutherford b hayes","james a garfield",
+    "chester a arthur","grover cleveland","benjamin harrison","grover cleveland","william mckinley","theodore roosevelt",
+    "william h taft","woodrow wilson","warren g harding","calvin coolidge","herbert hoover","franklin d roosevelt","harry truman",
+    "dwight eisenhower","john f kennedy","lyndon b johnson","richard m nixon","gerald ford","jimmy carter","ronald reagan",
+    "george hw bush","bill clinton","george w bush","barack obama"]
     statesUs = ['alabama','alaska','american samoa','arizona','arkansas','california','colorado','connecticut',
     'delaware','district of columbia','federated states of micronesia','florida','georgia','guam','hawaii','idaho',
     'illinois','indiana','iowa','kansas','kentucky','louisiana','maine','marshall islands','maryland','massachusetts',
