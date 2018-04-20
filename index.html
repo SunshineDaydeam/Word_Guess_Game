@@ -12,49 +12,17 @@
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Londrina+Sketch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
-    <style>
-
-        body {
-            background-color: rgb(255, 255, 255);
-            color:#777777;
-        }
-
-        .card {
-            background-color:bisque;
-        }
-
-        header h1{
-            font-size: 70px;
-        }
-
-        header h4{
-            font-size: 40px;
-        }
-
-        .londrina {
-            font-family: 'Londrina Sketch', cursive;
-        }
-
-        .container-fluid{
-            max-width:900px;
-        }
-
-        .footer {
-            position:relative;
-            bottom:0;
-        }
-
-    </style>
 </head>
 <body>
     
-<header class="jumbotron text-center bg-dark pt-3 pb-3 mb-3">
-    <h6 class="mb-0 londrina">Alex's
-        <span class="text-danger londrina font-weight-bold">U</span>
-        <span class="text-primary londrina font-weight-bold">S</span> 
-        <span class="text-white londrina font-weight-bold">A </span>  
-        Edition</h6>
+<header class="jumbotron text-center bg-dark pt-3 pb-1 mb-0">
+    <h3 class="mb-0 londrina text-white">Alex's
+        <span class="text-danger londrina font-weight-bold display-4">U</span>
+        <span class="text-primary londrina font-weight-bold display-4">S</span> 
+        <span class="text-white londrina font-weight-bold display-4">A </span>  
+        Edition</h3>
     <h1 class="text-white londrina">Hang-man Game</h1>
 </header>
 
@@ -63,8 +31,8 @@
         <div class="col-sm-12 text-center">
             <div class="card">          
                 <h5 class="pt-3 pb-0 text-danger font-italic" >"<span id="category"></span>"</h5>
-                <h1 class="display-4 text-uppercase pl-3 pr-3 pt-0 pb-0 mt-0 mb-0"><span id="wordDisplay"></h1>
-                <h6 class="pt-1 pb-3 mt-0 text-secondary">Previous Word: &nbsp <span class ="text-uppercase font-italic"id="prevWord"></span></h6>
+                <h1 class="text-uppercase text-Merriweather text-dark pl-3 pr-3 pt-0 pb-0 mt-0 mb-0"><span id="wordDisplay"></h1>
+                <h6 class="pt-1 pb-3 mt-2 text-secondary">Previous Word: &nbsp <span class ="text-uppercase text-Merriweather"id="prevWord"></span></h6>
             </div>
         </div>
     </div>
@@ -72,10 +40,10 @@
     <div class="row">
         <div class="col-sm-12 col-md-8 pt-3">
             <div class="card p-3">
-                <h5>You Guessed: &nbsp &nbsp
-                    <span class = "text-success display-4 text-uppercase" id="userGuessCorrect"></span>
-                    <span class = "text-danger display-4 text-uppercase" id="userGuessIncorrect"></span>
-                </h5>
+                <h2 class = "myBorderBottom mb-3 pb-3" >You Guessed: &nbsp &nbsp
+                    <span class = "text-success text-uppercase" id="userGuessCorrect"></span>
+                    <span class = "text-danger text-uppercase" id="userGuessIncorrect"></span>
+                </h2>
                 <h6>Guesses Remaining: <span id="lives"></h6>
                 <h6>You have tried: <span id="prevGuesses"></span></h6>
             </div>
@@ -87,6 +55,35 @@
             </div>
         </div>
     </div>
+
+    <div class = "row">
+        <div class = "col-sm-12 pt-3 pr-3">
+                <div class="card">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="m-3 pb-3 myBorderBottom"> Connect With Me</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 p-3 ml-3">
+                                <a href = "https://sunshinedaydeam.github.io/Responsive-Portfolio/" target="_blank"><img src="images/github.png" class="imageSize60 pl-1 pb-3" width="128px"></a>
+                                <a href = "https://www.linkedin.com/in/alex-bruner-366348155/" target="_blank"><img src="images/linkedin.png" class="imageSize60 pl-1 pb-3" width=128px" icon"></a>
+                                <a href = "https://stackoverflow.com/users/9510977/alex-bruner" target="_blank"><img src="images/stack_red.png" class="imageSize60 pl-1 pb-3" width="128px"></a>
+                                <a href = "https://www.facebook.com/alex.d.bruner" target="_blank"><img src="images/social-facebook-box-blue-icon.png" class="imageSize60 pl-1 pb-3" width="128px"></a>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <footer class="footer">
+        <p class = "text-center text-muted mb-0">Coded By Alex Bruner</p>
+        <p class = "text-center text-muted">Copyright 2018</p>
+    </footer>
 </div>
     <script src="wordGuess.js"></script>
 </body>

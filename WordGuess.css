@@ -1,0 +1,34 @@
+body {
+    background-color: #343a40;
+    color:#343a40;
+}
+
+.card {
+    background-color:rgb(255, 255, 255);
+}
+
+.text-Merriweather {
+    font-family: 'Merriweather', serif;
+}
+
+header h1{
+    font-size: 70px;
+    margin-top: -1rem;
+}
+
+.londrina {
+    font-family: 'Londrina Sketch', cursive;
+}
+
+.container-fluid{
+    max-width:900px;
+}
+
+.footer {
+    position:relative;
+    bottom:0;
+}
+
+.myBorderBottom {
+    border-bottom: 3px solid #a6a6a6;
+}
