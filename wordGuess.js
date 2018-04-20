@@ -89,6 +89,7 @@ document.onkeyup = function(event) {
                     lives=10;
                     prevGuesses=[];
                     wrongGuesses=[];
+                    answerArray = [];
                     for (i=0; i<word.length; i++){
                         answerArray[i] = "_";
                     }
@@ -117,6 +118,7 @@ document.onkeyup = function(event) {
                         lives=10;
                         prevGuesses=[];
                         wrongGuesses=[];
+                        answerArray=[]
                         for (i=0; i<word.length; i++){
                             answerArray[i] = "_";
                         }
