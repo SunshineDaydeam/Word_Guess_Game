@@ -24,7 +24,7 @@
     "surf", "indie", "chicano", "acapella", "calypso"]
     presidentsUs = ["taft", "obama", "hoover", "washington", "roosevelt", "clinton", "bush", "nixon", "eisenhower", 
     "truman", "coolidge", "harding", "wilson", "mckinley"]
-    statesUs = ['alabama','alaska','american Samoa','arizona','arkansas','california','colorado','connecticut',
+    statesUs = ['alabama','alaska','american samoa','arizona','arkansas','california','colorado','connecticut',
     'delaware','district of columbia','federated states of micronesia','florida','georgia','guam','hawaii','idaho',
     'illinois','indiana','iowa','kansas','kentucky','louisiana','maine','marshall islands','maryland','massachusetts',
     'michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','new hampshire','new jersey',
@@ -37,6 +37,7 @@
     var userGuess="";       // User's current Guess
     var prevGuesses=[];     // User's total previous Guesses
     var wrongGuesses =[];   // User's incorrect guesses
+    var previousWord = [" "];
     var winCount = 0;       // Initial win count of 0
     var lossCount = 0;      // Initial loss count of 0
 
@@ -99,33 +100,38 @@ document.onkeyup = function(event) {
 
             //  CORRECT GUESS //
             if (word.indexOf(userGuess) >= 0){                          
-                console.log(userGuess + " is correct");                 
+                //console.log(userGuess + " is correct");                 
                 answerArray.splice(word.indexOf(userGuess), 1, userGuess);
                 for (i=0; i<word.length; i++){
                     if  (word[i] == userGuess){
                         answerArray.splice(i, 1, userGuess);
                     }
                 }
-                console.log (answerArray);
+                //console.log (answerArray);
 
-                // WIN //
+                //////////////////////////
+                //        WIN!!!!       //
+                //////////////////////////
+
                 if (answerArray.indexOf("_") < 0){
                     winCount++;
                     
                     //Reset Word/Category/Lives/Guess Arrays
+                    previousWord.splice(0, 1, word);
+                    document.querySelector("#prevWord").innerHTML = previousWord;
                     randomCategory = category[Math.floor(Math.random() * Math.floor(category.length))];
                     word = randomCategory[Math.floor(Math.random() * Math.floor(randomCategory.length))];
                     console.log("word: " + '"' + word + "'" + " Wins: " + winCount + " Losses: " + lossCount);
                     lives=8;
                     prevGuesses=[];
                     wrongGuesses=[];
-                    answerArray = [];
+                    answerArray = [];                    
                     for (i=0; i<word.length; i++){          //for loop to assign underscores and spaces
                         if (word.charAt(i) == " "){          
                         answerArray[i] = " &nbsp ";}         //if character in word is blank, assign a space
                         else {                               
                         answerArray[i] = "_";}}               //if character in word is a letter, assign a "_"
-                }
+                    }
 
             }
 
@@ -137,13 +143,18 @@ document.onkeyup = function(event) {
                     wrongGuesses.push(userGuess);                       //push userGuess to prevGuesses
                     lives--;                                            //Lose One Life
                     wrongGuesses.sort();                                //alphabetize the wrong guesses                               
-                    console.log("wrongGuesses: " + wrongGuesses + " Lives Left: " + lives)
+                    //console.log("wrongGuesses: " + wrongGuesses + " Lives Left: " + lives)
             
-                    //  LOSS!  //
+                    //////////////////////////
+                    //        LOSS!!!!      //
+                    //////////////////////////
+                }
                     if (lives == 0){
                         lossCount++;
                         
                         //Reset Word/Category/Lives/Guess Arrays
+                        previousWord.splice(0, 1, word);
+                        document.querySelector("#prevWord").innerHTML = previousWord;
                         randomCategory = category[Math.floor(Math.random() * Math.floor(category.length))];
                         word = randomCategory[Math.floor(Math.random() * Math.floor(randomCategory.length))];
                         console.log("word: " + '"' + word + "'" + " LossCount: " + lossCount);
@@ -157,7 +168,7 @@ document.onkeyup = function(event) {
                             else {                               
                             answerArray[i] = "_";}}               //if character in word is a letter, assign a "_"
                     }
-                }       
+                       
             }
         }
     }
@@ -198,7 +209,6 @@ document.onkeyup = function(event) {
     document.querySelector("#lives").innerHTML = lives;
     document.querySelector("#wordDisplay").innerHTML = wordDisplay;
     document.querySelector("#prevGuesses").innerHTML = prevGuessDisplay;
-    
 }
 
 
