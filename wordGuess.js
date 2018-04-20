@@ -53,7 +53,7 @@
     statesUs];
     var randomCategory = category[Math.floor(Math.random() * Math.floor(category.length))];
     var word = randomCategory[Math.floor(Math.random() * Math.floor(randomCategory.length))];
-    console.log("new word: " + '"' + word + '"');
+    //console.log("new word: " + '"' + word + '"');
         
      //Initial Category Display
     if (carBrands.indexOf(word) >= 0){
@@ -86,6 +86,13 @@
         document.querySelector("#wins").innerHTML = winCount;
         document.querySelector("#losses").innerHTML = lossCount;
         document.querySelector("#lives").innerHTML = lives;
+        
+        var userGuessIncorrect = userGuess;
+        var userGuessCorrect = userGuess;
+
+        //Console.log message tellin you not to cheat
+        console.log("Thought you could find the answer here, did ya?")
+        console.log("Well, guess again!")
 
 
 //////////////////////////
@@ -101,13 +108,17 @@ document.onkeyup = function(event) {
 
         //check if it has already been guessed
         if (prevGuesses.indexOf(userGuess) < 0){
-            prevGuesses.push(userGuess);                                //push userGuess to prevGuesses
+            prevGuesses.push(userGuess);
+                                           //push userGuess to prevGuesses
             //console.log (prevGuesses);                                
             
 
             //  CORRECT GUESS //
             if (word.indexOf(userGuess) >= 0){                          
                 //console.log(userGuess + " is correct");                 
+                var userGuessCorrect = userGuess;
+                document.querySelector("#userGuessCorrect").innerHTML = userGuessCorrect;
+                document.querySelector("#userGuessIncorrect").innerHTML = "";
                 answerArray.splice(word.indexOf(userGuess), 1, userGuess);
                 for (i=0; i<word.length; i++){
                     if  (word[i] == userGuess){
@@ -125,13 +136,15 @@ document.onkeyup = function(event) {
                     
                     //Reset Word/Category/Lives/Guess Arrays
                     previousWord.splice(0, 1, word);
-                    document.querySelector("#prevWord").innerHTML = previousWord;
+                    document.querySelector("#prevWord").innerHTML = '"' +previousWord + '"';
                     randomCategory = category[Math.floor(Math.random() * Math.floor(category.length))];
                     word = randomCategory[Math.floor(Math.random() * Math.floor(randomCategory.length))];
-                    console.log("word: " + '"' + word + "'" + " Wins: " + winCount + " Losses: " + lossCount);
+                    //console.log("word: " + '"' + word + "'" + " Wins: " + winCount + " Losses: " + lossCount);
                     lives=8;
+                    userGuessCorrect = "";
                     prevGuesses=[];
                     wrongGuesses=[];
+                    document.querySelector("#userGuessCorrect").innerHTML = "";
                     answerArray = [];                    
                     for (i=0; i<word.length; i++){          //for loop to assign underscores and spaces
                         if (word.charAt(i) == " "){          
@@ -147,6 +160,9 @@ document.onkeyup = function(event) {
                 
                 //check if it has already been guessed                 
                 if (wrongGuesses.indexOf(userGuess) < 0){
+                    userGuessIncorrect = userGuess;
+                    document.querySelector("#userGuessIncorrect").innerHTML = userGuessIncorrect;
+                    document.querySelector("#userGuessCorrect").innerHTML = "";
                     wrongGuesses.push(userGuess);                       //push userGuess to prevGuesses
                     lives--;                                            //Lose One Life
                     wrongGuesses.sort();                                //alphabetize the wrong guesses                               
@@ -161,13 +177,14 @@ document.onkeyup = function(event) {
                         
                         //Reset Word/Category/Lives/Guess Arrays
                         previousWord.splice(0, 1, word);
-                        document.querySelector("#prevWord").innerHTML = previousWord;
+                        document.querySelector("#prevWord").innerHTML = '"' +previousWord + '"';
                         randomCategory = category[Math.floor(Math.random() * Math.floor(category.length))];
                         word = randomCategory[Math.floor(Math.random() * Math.floor(randomCategory.length))];
-                        console.log("word: " + '"' + word + "'" + " LossCount: " + lossCount);
+                        //console.log("word: " + '"' + word + "'" + " LossCount: " + lossCount);
                         lives=8;
                         prevGuesses=[];
                         wrongGuesses=[];
+                        document.querySelector("#userGuessIncorrect").innerHTML = "";
                         answerArray=[]
                         for (i=0; i<word.length; i++){          //for loop to assign underscores and spaces
                             if (word.charAt(i) == " "){          
