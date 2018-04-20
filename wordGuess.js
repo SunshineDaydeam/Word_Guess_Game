@@ -33,7 +33,7 @@
     statesUs = ["hawaii", "washington", "oregon", "california", "idaho", "nevada", "utah", "arizona", "montana", 
     "wyoming", "colorado", "texas"]
 
-    var lives = 10;         // Number of tries to guess the word
+    var lives = 8;         // Number of tries to guess the word
     var userGuess="";       // User's current Guess
     var prevGuesses=[];     // User's total previous Guesses
     var wrongGuesses =[];   // User's incorrect guesses
@@ -52,6 +52,14 @@
             answerArray[i] = "_";
         }
 
+        var wordDisplay = answerArray.join(" ");
+        document.querySelector("#wordDisplay").innerHTML = wordDisplay;
+        document.querySelector("#wins").innerHTML = winCount;
+        document.querySelector("#losses").innerHTML = lossCount;
+        document.querySelector("#lives").innerHTML = lives;
+
+
+
         //
         //GAME BEGINS
         //
@@ -59,7 +67,8 @@
 //When key is pressed, begin the Game   
 document.onkeyup = function(event) {                                    
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();   //convert type to lowercase letter
-    if (alphabet.indexOf(userGuess) >= 0){                              //check if the user Guess is a valid letter
+    if (alphabet.indexOf(userGuess) >= 0){
+                                      //check if the user Guess is a valid letter
         //console.log ('"Users Typed Guess:"' + userGuess);
 
         //check if it has already been guessed
@@ -86,7 +95,7 @@ document.onkeyup = function(event) {
                     randomCategory = category[Math.floor(Math.random() * Math.floor(category.length))];
                     word = randomCategory[Math.floor(Math.random() * Math.floor(randomCategory.length))];
                     console.log("word: " + '"' + word + "'" + " Wins: " + winCount + " Losses: " + lossCount);
-                    lives=10;
+                    lives=8;
                     prevGuesses=[];
                     wrongGuesses=[];
                     answerArray = [];
@@ -115,7 +124,7 @@ document.onkeyup = function(event) {
                         randomCategory = category[Math.floor(Math.random() * Math.floor(category.length))];
                         word = randomCategory[Math.floor(Math.random() * Math.floor(randomCategory.length))];
                         console.log("word: " + '"' + word + "'" + " LossCount: " + lossCount);
-                        lives=10;
+                        lives=8;
                         prevGuesses=[];
                         wrongGuesses=[];
                         answerArray=[]
@@ -130,6 +139,16 @@ document.onkeyup = function(event) {
             }
         }
     }
+    var wordDisplay = answerArray.join(" ");
+    var prevGuessDisplay = wrongGuesses.join(" ");
+    
+
+    document.querySelector("#wins").innerHTML = winCount;
+    document.querySelector("#losses").innerHTML = lossCount;
+    document.querySelector("#lives").innerHTML = lives;
+    document.querySelector("#wordDisplay").innerHTML = wordDisplay;
+    document.querySelector("#prevGuesses").innerHTML = prevGuessDisplay;
+    
 }
 
 
