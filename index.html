@@ -50,20 +50,20 @@
 <body>
     
 <header class="jumbotron text-center bg-dark pt-3 pb-3 mb-3">
-    <h4 class="mb-0 londrina">Alex's
+    <h6 class="mb-0 londrina">Alex's
         <span class="text-danger londrina font-weight-bold">U</span>
         <span class="text-primary londrina font-weight-bold">S</span> 
         <span class="text-white londrina font-weight-bold">A </span>  
-        Edition</h4>
-    <h1 class="text-white londrina">Hang-man Game</h1>
+        Edition</h6>
+    <h3 class="text-white londrina">Hang-man Game</h3>
 </header>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 text-center">
             <div class="card">          
-                <h4 class="pt-3 pb-3">"Car Brands"</h4>
-                <h1 class="pb-3">_ _ _ _ _ _ _ _ _ _ _ _ _</h1>
+                <h4 class="pt-3 pb-3 text-danger" id="category"></h4>
+                <h1 class="pb-3"><span id="wordDisplay"></h1>
             </div>
         </div>
     </div>
@@ -71,16 +71,15 @@
     <div class="row">
         <div class="col-sm-12 col-md-8 pt-3">
             <div class="card p-3">
-                <h2>You Guessed: "userGuess"</p>
-                <h3>Guesses Remaining: 10</h3>
-                <h3>You have tried: _ _ _ _ _ _ _ _ _</h3>
+                <h5>You Guessed: <span id="userGuess"></span></h5>
+                <h6>Guesses Remaining: <span id="lives"></h6>
+                <h6>You have tried: _ _ _ _ _ _ _ _ _</h6>
             </div>
         </div>
         <div class="col-sm-12 col-md-4 pt-3">
             <div class="card p-3">
-                <h2>Score</h2>
-                <h3>Wins: 0</h3>
-                <h3>Losses:0</h3>
+                <h5>Wins: <span id ="wins"></span></h5>
+                <h5>Losses: <span id="losses"></span></h5>
             </div>
         </div>
     </div>
@@ -93,7 +92,7 @@
 <br>
 <footer class="footer bg-dark text-center pt-3 pb-3 mt-3">
     <div class="container">
-        <button class="btn-lg bg-danger text-white">Reset The Game</button>
+        <button class="btn-lg bg-danger text-white" id="random-button"ß>Reset The Game</button>
     </div>            
 </footer>
 
