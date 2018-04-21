@@ -1,94 +1,79 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Word Guess Game</title>
+    <title>Alex Bruner Portfolio/index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="wordGuess.css" />
+        <!--Reset-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+        <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+        <!--External Style-->
+        <link rel="stylesheet" type="text/css" media="screen" href="WordGuess.css" />
 
-    <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Londrina+Sketch" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Londrina+Sketch" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
-    <style>
-        body {
-    background-color: #343a40;
-    color:#343a40;
-}
-
-.card {
-    background-color:rgb(255, 255, 255);
-}
-
-.text-Merriweather {
-    font-family: 'Merriweather', serif;
-}
-
-header h1{
-    font-size: 70px;
-    margin-top: -1rem;
-}
-
-.londrina {
-    font-family: 'Londrina Sketch', cursive;
-}
-
-.container-fluid{
-    max-width:900px;
-}
-
-.footer {
-    position:relative;
-    bottom:0;
-}
-
-.myBorderBottom {
-    border-bottom: 3px solid #a6a6a6;
-}
-    </style>
+        <style>
+        
+        </style>
 
 </head>
-<body>
+<body> 
+
     
-<header class="jumbotron text-center bg-dark pt-3 pb-1 mb-0">
-    <h3 class="mb-0 londrina text-white">Alex's
+<nav>
+        <div class="text-center allWidthHeader">
+            <a href="design2.html"><h1 class = "londrina font-weight-bold myHeader text-white p-3 pt-4 mb-0">Hang-man Game</h1></a>
+        </div>
+</nav>        
+<nav>
+        <div class="text-center bg-white text-white p-3 myBorderBottom">
+            <span><a href="https://sunshinedaydeam.github.io/Responsive-Portfolio/index.html">About Me &nbsp |</a>
+            <a href="https://sunshinedaydeam.github.io/Responsive-Portfolio/games.html">&nbsp More Games &nbsp |</a>
+            <a href="https://sunshinedaydeam.github.io/Responsive-Portfolio/contact.html"> &nbsp Contact Me</a></span>
+        </div>
+</nav>
+
+    <!--h3 class="mb-0 mt-3 londrina text-dark text-center">Alex's
         <span class="text-danger londrina font-weight-bold display-4">U</span>
         <span class="text-primary londrina font-weight-bold display-4">S</span> 
         <span class="text-white londrina font-weight-bold display-4">A </span>  
         Edition</h3>
-    <h1 class="text-white londrina">Hang-man Game</h1>
-</header>
+    <h3 class="text-dark text-center londrina">Hang-man Game</h3-->
+
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <div class="card">          
-                <h5 class="pt-3 pb-0 text-danger font-italic" >"<span id="category"></span>"</h5>
-                <h1 class="text-uppercase text-Merriweather text-dark pl-3 pr-3 pt-0 pb-0 mt-0 mb-0"><span id="wordDisplay"></h1>
-                <h6 class="pt-1 pb-3 mt-2 text-secondary">Previous Word: &nbsp <span class ="text-uppercase text-Merriweather"id="prevWord"></span></h6>
-            </div>
-        </div>
-    </div>ß
+    <div class="jumbotron  mb-0 p-4 text-center">
+        <h4 class="pt-3 pb-0 font-weight-light text-info" >"<span id="category"></span>"</h4>
+        <h1 class="text-uppercase text-Merriweather text-dark pl-3 pr-3 pt-5 pb-5 mt-0 mb-0"><span id="wordDisplay"></h1>
+        <p class="pt-1 pb-3 mt-3 text-secondary">Previous Word: &nbsp <span class ="text-uppercase text-Merriweather"id="prevWord"></span></p>  
+    </div>
     
     <div class="row">
-        <div class="col-sm-12 col-md-8 pt-3">
+        <div class="col-sm-12 col-md-3 mt-2">
             <div class="card p-3">
-                <h2 class = "myBorderBottom mb-3 pb-3" >You Guessed: &nbsp &nbsp
+                <h4 class = "pb-3 myBorderBottom text-info">Wins / Losses:</h4>
+                <h5 class = "pt-2">Wins: <span id ="wins"></span></h5>
+                <h5>Losses: <span id="losses"></span></h5>
+            </div>
+        </div>        
+        <div class="col-sm-12 col-md-6 mt-2">
+            <div class="card p-3">
+                <h2 class = "myBorderBottom text-info mb-3 pb-3" >You Guessed: &nbsp &nbsp
                     <span class = "text-success text-uppercase" id="userGuessCorrect"></span>
                     <span class = "text-danger text-uppercase" id="userGuessIncorrect"></span>
                 </h2>
-                <h6>Guesses Remaining: <span id="lives"></h6>
+                <h6>Guesses Remaining: &nbsp &nbsp<span id="lives"></h6>
                 <h6>You have tried: <span id="prevGuesses"></span></h6>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 pt-3">
-            <div class="card p-3">
-                <h5>Wins: <span id ="wins"></span></h5>
-                <h5>Losses: <span id="losses"></span></h5>
+
+        <div class=" col-md-3 mt-2">
+            <div class="card text-info p-3">
+                <h5 class = "pb-2">Objective:</h5>
+                <p class="text-muted">Correctly guess the word with only with less than 8 mistakes.</p>
             </div>
         </div>
     </div>
@@ -98,7 +83,7 @@ header h1{
                 <div class="card">
                         <div class="row">
                             <div class="col-md-12">
-                                <h4 class="m-3 pb-3 myBorderBottom"> Connect With Me</h4>
+                                <h4 class="m-3 pb-3 text-info myBorderBottom"> Connect With Me</h4>
                             </div>
                         </div>
                         <div class="row">
@@ -116,13 +101,15 @@ header h1{
     <br>
     <br>
     <br>
+</div>
 
-    <footer class="footer">
+    <footer class="footer pb-1 pt-4">
         <p class = "text-center text-muted mb-0">Coded By Alex Bruner</p>
         <p class = "text-center text-muted">Copyright 2018</p>
     </footer>
-</div>
+      
     <script src="wordGuess.js"></script>
+      
+
 </body>
-    
 </html>
